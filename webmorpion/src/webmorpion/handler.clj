@@ -1,10 +1,11 @@
 (ns webmorpion.handler
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
-            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+            [selmer.parser :as parser])
 
 (defn ttt []
-  "Tic - Tac - Toe")
+  parser/render-file "home.html")
 
 (defn play []
   ;; Get the player from the query string
