@@ -6,4 +6,4 @@ COPY . .
 
 WORKDIR /usr/src/app/webmorpion
 
-CMD ["lein", "run"]
+CMD ["lein", "ring", "server-headless"]
