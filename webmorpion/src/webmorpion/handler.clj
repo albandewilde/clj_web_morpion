@@ -16,17 +16,19 @@
 
  "The player play his turn")
 
-(defn endgame []
+(defn endgame [player]
   ;; Get the winner from the query string
+  (def p (Integer/parseInt player))
 
   ;; Display a page to congrat him
+  (if (== 0 p) "Draw"
+    (if (== 1 p) "player 1 won" "player 2 is the winner")))
 
- "The game is finish")
 
 (defroutes app-routes
   (GET "/" [] (ttt))
   (GET "/play" [] (play))
-  (GET "/endgame" [] (endgame))
+  (GET "/endgame" {params :query-params} (endgame (get params "p")))
   (route/not-found "Not Found"))
 
 (def app
