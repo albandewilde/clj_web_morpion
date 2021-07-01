@@ -21,8 +21,7 @@
   (def p (Integer/parseInt player))
 
   ;; Display a page to congrat him
-  (if (== 0 p) "Draw"
-    (if (== 1 p) "player 1 won" "player 2 is the winner")))
+  (parser/render-file "./templates/win.html" {:p p}))
 
 
 (defroutes app-routes
