@@ -2,10 +2,10 @@
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-            [selmer.parser :as parser])
+            [selmer.parser :as parser]))
 
 (defn ttt []
-  parser/render-file "home.html")
+  (parser/render-file "./templates/home.html" {}))
 
 (defn play []
   ;; Get the player from the query string
