@@ -6,11 +6,14 @@
     </head>
 
     <body>
-        {% if (== 0 p) %}
+        {% ifequal 0 p %}
             Draw
         {% else %}
-            The player {{(str p)}} is the winner !
-        {% endif %}
+            The player {{p}} is the winner !
+        {% endifequal %}
+
+        <br>
+        <a href="/">Accueil</a>
     </body>
 
 </html>
