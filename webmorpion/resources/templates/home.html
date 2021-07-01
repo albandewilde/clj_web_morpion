@@ -13,7 +13,7 @@
             {% for number in list %}
             <tr>
                 {% for idx in list %}
-                <th><a href="#">{{ idx }}</a></th>
+                <th><a href="/play?box={{number}}{{idx}}">{{ number }}{{ idx }}</a></th>
                 {% endfor %}
             </tr>
             {% endfor %}
