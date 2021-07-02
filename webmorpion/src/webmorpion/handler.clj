@@ -77,17 +77,9 @@
 
   (parser/render-file tpl markers))
 
-(defn endgame [player]
-  ;; Get the winner from the query string
-  (def p (Integer/parseInt player))
-
-  ;; Display a page to congrat him
-  (parser/render-file "./templates/win.html" {:p p}))
-
 (defroutes app-routes
   (GET "/" [] (ttt))
   (GET "/play" {params :query-params} (play params))
-  (GET "/endgame" {params :query-params} (endgame (get params "p")))
   (route/not-found "Not Found"))
 
 (def app
