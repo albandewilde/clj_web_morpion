@@ -16,12 +16,23 @@
             table {
                 width: 35%;
             }
+            
             th {
                 height: 70px;
+                max-width: 33%;
+                min-width: 33%;
                 cursor: pointer;
+                border: 1px solid black;
             }
             th:hover {
                 background-color: aquamarine;
+            }
+            td {
+                border: 1px solid black;
+            }
+            .box {
+                min-height: 70px;
+                max-height: 70px;
             }
         </style>
     </head>
@@ -34,7 +45,7 @@
                     <th>
                         {% ifequal c00 0 %}
                         <a href="/play?box=c00&{{board}}">
-                            #
+                            <div class="box"></div>
                         </a>
                         {% else %}
                             {{c00}}
@@ -43,7 +54,7 @@
                     <th>
                         {% ifequal c01 0 %}
                         <a href="/play?box=c01&{{board}}">
-                            #
+                            <div class="box"></div>
                         </a>
                         {% else %}
                             {{c01}}
@@ -52,7 +63,7 @@
                     <th>
                         {% ifequal c02 0 %}
                         <a href="/play?box=c02&{{board}}">
-                            #
+                            <div class="box"></div>
                         </a>
                         {% else %}
                             {{c02}}
@@ -63,7 +74,7 @@
                     <th>
                         {% ifequal c10 0 %}
                         <a href="/play?box=c10&{{board}}">
-                            #
+                            <div class="box"></div>
                         </a>
                         {% else %}
                             {{c10}}
@@ -72,7 +83,7 @@
                     <th>
                         {% ifequal c11 0 %}
                         <a href="/play?box=c11&{{board}}">
-                            #
+                            <div class="box"></div>
                         </a>
                         {% else %}
                             {{c11}}
@@ -81,7 +92,7 @@
                     <th>
                         {% ifequal c12 0 %}
                         <a href="/play?box=c12&{{board}}">
-                            #
+                            <div class="box"></div>
                         </a>
                         {% else %}
                             {{c12}}
@@ -92,7 +103,7 @@
                     <th>
                         {% ifequal c20 0 %}
                         <a href="/play?box=c20&{{board}}">
-                            #
+                            <div class="box"></div>
                         </a>
                         {% else %}
                             {{c20}}
@@ -101,7 +112,7 @@
                     <th>
                         {% ifequal c21 0 %}
                         <a href="/play?box=c21&{{board}}">
-                            #
+                            <div class="box"></div>
                         </a>
                         {% else %}
                             {{c21}}
@@ -110,7 +121,7 @@
                     <th>
                         {% ifequal c22 0 %}
                         <a href="/play?box=c22&{{board}}">
-                            #
+                            <div class="box"></div>
                         </a>
                         {% else %}
                             {{c22}}
