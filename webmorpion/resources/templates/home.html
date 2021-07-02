@@ -44,28 +44,40 @@
                     <th>
                         {% ifequal c00 0 %}
                         <a href="/play?box=c00&{{board}}">
-                            <div class="box"></div>
+                            <img src="/empty.png">
                         </a>
                         {% else %}
-                            {{c00}}
+                            {% ifequal c00 1 %}
+                                <img src="/x.png">
+                            {% else %}
+                                <img src="/o.png">
+                            {% endifequal %}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c01 0 %}
                         <a href="/play?box=c01&{{board}}">
-                            <div class="box"></div>
+                            <img src="/empty.png">
                         </a>
                         {% else %}
-                            {{c01}}
+                            {% ifequal c01 1 %}
+                                <img src="/x.png">
+                            {% else %}
+                                <img src="/o.png">
+                            {% endifequal %}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c02 0 %}
                         <a href="/play?box=c02&{{board}}">
-                            <div class="box"></div>
+                            <img src="/empty.png">
                         </a>
                         {% else %}
-                            {{c02}}
+                            {% ifequal c02 1 %}
+                                <img src="/x.png">
+                            {% else %}
+                                <img src="/o.png">
+                            {% endifequal %}
                         {% endifequal %}
                     </th>
                 </tr>
@@ -73,28 +85,40 @@
                     <th>
                         {% ifequal c10 0 %}
                         <a href="/play?box=c10&{{board}}">
-                            <div class="box"></div>
+                            <img src="/empty.png">
                         </a>
                         {% else %}
-                            {{c10}}
+                            {% ifequal c10 1 %}
+                                <img src="/x.png">
+                            {% else %}
+                                <img src="/o.png">
+                            {% endifequal %}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c11 0 %}
                         <a href="/play?box=c11&{{board}}">
-                            <div class="box"></div>
+                            <img src="/empty.png">
                         </a>
                         {% else %}
-                            {{c11}}
+                            {% ifequal c11 1 %}
+                                <img src="/x.png">
+                            {% else %}
+                                <img src="/o.png">
+                            {% endifequal %}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c12 0 %}
                         <a href="/play?box=c12&{{board}}">
-                            <div class="box"></div>
+                            <img src="/empty.png">
                         </a>
                         {% else %}
-                            {{c12}}
+                            {% ifequal c12 1 %}
+                                <img src="/x.png">
+                            {% else %}
+                                <img src="/o.png">
+                            {% endifequal %}
                         {% endifequal %}
                     </th>
                 </tr>
@@ -102,28 +126,40 @@
                     <th>
                         {% ifequal c20 0 %}
                         <a href="/play?box=c20&{{board}}">
-                            <div class="box"></div>
+                            <img src="/empty.png">
                         </a>
                         {% else %}
-                            {{c20}}
+                            {% ifequal c20 1 %}
+                                <img src="/x.png">
+                            {% else %}
+                                <img src="/o.png">
+                            {% endifequal %}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c21 0 %}
                         <a href="/play?box=c21&{{board}}">
-                            <div class="box"></div>
+                            <img src="/empty.png">
                         </a>
                         {% else %}
-                            {{c21}}
+                            {% ifequal c21 1 %}
+                                <img src="/x.png">
+                            {% else %}
+                                <img src="/o.png">
+                            {% endifequal %}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c22 0 %}
                         <a href="/play?box=c22&{{board}}">
-                            <div class="box"></div>
+                            <img src="/empty.png">
                         </a>
                         {% else %}
-                            {{c22}}
+                            {% ifequal c22 1 %}
+                                <img src="/x.png">
+                            {% else %}
+                                <img src="/o.png">
+                            {% endifequal %}
                         {% endifequal %}
                     </th>
                 </tr>
