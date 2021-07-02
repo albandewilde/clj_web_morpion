@@ -18,6 +18,17 @@
       (test (get board "c20") (get board "c11") (get board "c02"))
       ))
 
+(defn continue? [board]
+  (or (zero? (get board "c00"))
+      (zero? (get board "c01"))
+      (zero? (get board "c02"))
+      (zero? (get board "c10"))
+      (zero? (get board "c11"))
+      (zero? (get board "c12"))
+      (zero? (get board "c20"))
+      (zero? (get board "c21"))
+      (zero? (get board "c22"))))
+
 (defn ttt []
   (parser/render-file "./templates/home.html" {
                                                :c00 0, :c01 0, :c02 0,
@@ -58,9 +69,11 @@
                 :c10 (get board "c10"), :c11 (get board "c11"), :c12 (get board "c12"),
                 :c20 (get board "c20"), :c21 (get board "c21"), :c22 (get board "c22"),
                 :board queryBoard,
-                :winner player})
+                :winner (if (winning-morpion? board) player 0)})
 
-  (def tpl (if (winning-morpion? board) "./templates/win.html" "./templates/home.html" ))
+  (def tpl (if (winning-morpion? board)
+             "./templates/win.html"
+             (if (not (continue? board))  "./templates/win.html" "./templates/home.html" )))
 
   (parser/render-file tpl markers))
 
