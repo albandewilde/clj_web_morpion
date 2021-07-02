@@ -5,7 +5,7 @@
             [selmer.parser :as parser]))
 
 (defn ttt []
-  (parser/render-file "./templates/home.html" {:list '( 0 1 2 )}))
+  (parser/render-file "./templates/home.html" {:list ( range 3 )}))
 
 (defn play []
   ;; Get the player from the query string
