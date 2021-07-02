@@ -17,12 +17,23 @@
             table {
                 width: 35%;
             }
+
             th {
                 height: 70px;
+                max-width: 33%;
+                min-width: 33%;
                 cursor: pointer;
+                border: 1px solid black;
             }
             th:hover {
                 background-color: aquamarine;
+            }
+            td {
+                border: 1px solid black;
+            }
+            .box {
+                min-height: 70px;
+                max-height: 70px;
             }
         </style>
     </head>
@@ -44,21 +55,21 @@
                 <tr>
                     <th>
                         {% ifequal c00 0 %}
-                            #
+                            <div class="box"></div>
                         {% else %}
                             {{c00}}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c01 0 %}
-                            #
+                            <div class="box"></div>
                         {% else %}
                             {{c01}}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c02 0 %}
-                            #
+                            <div class="box"></div>
                         {% else %}
                             {{c02}}
                         {% endifequal %}
@@ -67,21 +78,21 @@
                 <tr>
                     <th>
                         {% ifequal c10 0 %}
-                            #
+                            <div class="box"></div>
                         {% else %}
                             {{c10}}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c11 0 %}
-                            #
+                            <div class="box"></div>
                         {% else %}
                             {{c11}}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c12 0 %}
-                            #
+                            <div class="box"></div>
                         {% else %}
                             {{c12}}
                         {% endifequal %}
@@ -90,21 +101,21 @@
                 <tr>
                     <th>
                         {% ifequal c20 0 %}
-                            #
+                            <div class="box"></div>
                         {% else %}
                             {{c20}}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c21 0 %}
-                            #
+                            <div class="box"></div>
                         {% else %}
                             {{c21}}
                         {% endifequal %}
                     </th>
                     <th>
                         {% ifequal c22 0 %}
-                            #
+                            <div class="box"></div>
                         </a>
                         {% else %}
                             {{c22}}
