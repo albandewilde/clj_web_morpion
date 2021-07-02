@@ -3,17 +3,133 @@
     <head>
         <meta charset="UTF-8">
         <title>And the winner is !</title>
+        <style type="text/css">
+            h1 {
+                text-align: center;
+            }
+            .board-container {
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                justify-content: center;
+            }
+            table {
+                width: 35%;
+            }
+            th {
+                height: 70px;
+                cursor: pointer;
+            }
+            th:hover {
+                background-color: aquamarine;
+            }
+        </style>
     </head>
 
     <body>
-        {% ifequal 0 p %}
-            Draw
-        {% else %}
-            The player {{p}} is the winner !
-        {% endifequal %}
+        <h1>
+            {% ifequal 0 winner %}
+                Draw
+            {% else %}
+                The player {{winner}} is the winner !
+            {% endifequal %}
 
-        <br>
-        <a href="/">Accueil</a>
+            <br>
+            <a href="/">Accueil</a>
+        </h1>
+
+        <div class="board-container">
+            <table>
+                <tr>
+                    <th>
+                        {% ifequal c00 0 %}
+                        <a href="/play?box=c00&{{board}}">
+                            #
+                        </a>
+                        {% else %}
+                            {{c00}}
+                        {% endifequal %}
+                    </th>
+                    <th>
+                        {% ifequal c01 0 %}
+                        <a href="/play?box=c01&{{board}}">
+                            #
+                        </a>
+                        {% else %}
+                            {{c01}}
+                        {% endifequal %}
+                    </th>
+                    <th>
+                        {% ifequal c02 0 %}
+                        <a href="/play?box=c02&{{board}}">
+                            #
+                        </a>
+                        {% else %}
+                            {{c02}}
+                        {% endifequal %}
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        {% ifequal c10 0 %}
+                        <a href="/play?box=c10&{{board}}">
+                            #
+                        </a>
+                        {% else %}
+                            {{c10}}
+                        {% endifequal %}
+                    </th>
+                    <th>
+                        {% ifequal c11 0 %}
+                        <a href="/play?box=c11&{{board}}">
+                            #
+                        </a>
+                        {% else %}
+                            {{c11}}
+                        {% endifequal %}
+                    </th>
+                    <th>
+                        {% ifequal c12 0 %}
+                        <a href="/play?box=c12&{{board}}">
+                            #
+                        </a>
+                        {% else %}
+                            {{c12}}
+                        {% endifequal %}
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        {% ifequal c20 0 %}
+                        <a href="/play?box=c20&{{board}}">
+                            #
+                        </a>
+                        {% else %}
+                            {{c20}}
+                        {% endifequal %}
+                    </th>
+                    <th>
+                        {% ifequal c21 0 %}
+                        <a href="/play?box=c21&{{board}}">
+                            #
+                        </a>
+                        {% else %}
+                            {{c21}}
+                        {% endifequal %}
+                    </th>
+                    <th>
+                        {% ifequal c22 0 %}
+                        <a href="/play?box=c22&{{board}}">
+                            #
+                        </a>
+                        {% else %}
+                            {{c22}}
+                        {% endifequal %}
+                    </th>
+                </tr>
+            </table>
+        </div>
     </body>
 
 </html>

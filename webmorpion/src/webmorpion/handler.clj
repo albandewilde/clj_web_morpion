@@ -4,6 +4,20 @@
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [selmer.parser :as parser]))
 
+(defn winning-morpion? [board]
+  (defn test [a b c] (and (not= a 0) (= a b) (= a c)))
+  (or (test (get board "c00") (get board "c01") (get board "c02"))
+      (test (get board "c10") (get board "c11") (get board "c12"))
+      (test (get board "c20") (get board "c21") (get board "c22"))
+
+      (test (get board "c00") (get board "c10") (get board "c20"))
+      (test (get board "c01") (get board "c11") (get board "c21"))
+      (test (get board "c02") (get board "c12") (get board "c22"))
+
+      (test (get board "c00") (get board "c11") (get board "c22"))
+      (test (get board "c20") (get board "c11") (get board "c02"))
+      ))
+
 (defn ttt []
   (parser/render-file "./templates/home.html" {
                                                :c00 0, :c01 0, :c02 0,
@@ -25,6 +39,7 @@
               })
 
   (def board (assoc board box player))
+
   (def queryBoard (clojure.string/join [
                                         "c00=" (get board "c00") "&"
                                         "c01=" (get board "c01") "&"
@@ -38,11 +53,16 @@
                                         "player=" (if (== player 1) 2 1)]))
 
   ;; Display the modified grid
-  (parser/render-file "./templates/home.html" {
-                                               :c00 (get board "c00"), :c01 (get board "c01"), :c02 (get board "c02"),
-                                               :c10 (get board "c10"), :c11 (get board "c11"), :c12 (get board "c12"),
-                                               :c20 (get board "c20"), :c21 (get board "c21"), :c22 (get board "c22"),
-                                               :board queryBoard}))
+  (def markers {
+                :c00 (get board "c00"), :c01 (get board "c01"), :c02 (get board "c02"),
+                :c10 (get board "c10"), :c11 (get board "c11"), :c12 (get board "c12"),
+                :c20 (get board "c20"), :c21 (get board "c21"), :c22 (get board "c22"),
+                :board queryBoard,
+                :winner player})
+
+  (def tpl (if (winning-morpion? board) "./templates/win.html" "./templates/home.html" ))
+
+  (parser/render-file tpl markers))
 
 (defn endgame [player]
   ;; Get the winner from the query string
@@ -50,7 +70,6 @@
 
   ;; Display a page to congrat him
   (parser/render-file "./templates/win.html" {:p p}))
-
 
 (defroutes app-routes
   (GET "/" [] (ttt))
